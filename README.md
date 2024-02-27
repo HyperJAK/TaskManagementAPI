@@ -1,5 +1,5 @@
-# Comp-Sec-Final-Proj
-  Web created using ReactJs, it tests user login / logout to Db and implements multiple security layers for safe Data storage.
+# Task Management API
+  C# project created for uni advanced prog course final
 
 # Latest Release
   (#)
