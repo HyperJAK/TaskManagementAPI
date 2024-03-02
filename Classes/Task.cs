@@ -1,36 +1,42 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using TaskManagementAPI.Classes;
+using TaskManagementAPI.Classes.Database;
 
 namespace ClassFormWithDb.Classes
 {
+    [Table("task")]
     public class Task
     {
-        public int Task_id { get; set; }
+        [Column("taskId")]
+        [Key]
+        public int TaskId { get; set; }
+
+        [Column("name")]
+        [Required]
         public string Name { get; set; }
+
+        [Column("description")]
         public string Description { get; set; }
+
+        [Column("priority")]
         public string Priority { get; set; }
+
+        [Column("deadline")]
+        public DateTime? Deadline { get; set; }
+
+        [Column("category_category_id")]
+        [ForeignKey("Category")]
+        public int CategoryId { get; set; }
+
         public Category Category { get; set; }
-        public DateTime DeadlineDate { get; set; }
 
-        public int Category_category_id { get; set; }
+        [InverseProperty("Task")]
+        public List<UserHasTask> UserHasTasks { get; set; }
 
-        public List<SubTask> SubTasks { get; set; }
-
-        public Task() { }
-
-        public Task(int id) {
-            this.Task_id = id;
-        }
-
-        public Task(int taskId, string name, string description, string priority, Category category, DateTime deadlineDate, int category_category_id)
-        {
-            Task_id = taskId;
-            Name = name;
-            Description = description;
-            Priority = priority;
-            Category = category;
-            DeadlineDate = deadlineDate;
-            Category_category_id = category_category_id;
-        }
+        [InverseProperty("Task")]
+        public List<TaskHasSubTask> TaskHasSubTasks { get; set; }
     }
 
 }

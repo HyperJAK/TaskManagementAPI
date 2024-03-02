@@ -1,42 +1,47 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using TaskManagementAPI.Classes;
+using TaskManagementAPI.Classes.Database;
 
 namespace ClassFormWithDb.Classes
 {
+    [Table("user")]
     public class User
     {
-        public int User_id { get; set; }
+        [Column("userId")]
+        [Key]
+        public int UserId { get; set; }
+
+        [Column("profilePic")]
         public string ProfilePic { get; set; }
+
+        [Column("email")]
+        [Required]
         public string Email { get; set; }
+
+        [Column("username")]
+        [Required]
         public string Username { get; set; }
+
+        [Column("password")]
+        [Required]
         public string Password { get; set; }
-        public DateTime Registration_date { get; set; }
+
+        [Column("registration_date")]
+        public DateTime? RegistrationDate { get; set; }
+
+        [Column("passId")]
         public string PassId { get; set; }
-        public string Platform_account { get; set; }
 
-        List<Task> tasksList { get; set; }
+        [Column("platform_account")]
+        public string PlatformAccount { get; set; }
 
-        public User() { }
+        [Column("disabled")]
+        public bool? Disabled { get; set; }
 
-        public User(
-            int userId,
-            string profilePic,
-            string email,
-            string username,
-            string password,
-            DateTime registrationDate,
-            string passId,
-            string platformAccount
-        )
-        {
-            User_id = userId;
-            ProfilePic = profilePic;
-            Email = email;
-            Username = username;
-            Password = password;
-            Registration_date = registrationDate;
-            PassId = passId;
-            Platform_account = platformAccount;
-        }
+        [InverseProperty("User")]
+        public List<UserHasTask> UserHasTasks { get; set; }
     }
 
 }

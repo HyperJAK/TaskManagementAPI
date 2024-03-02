@@ -1,27 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace ClassFormWithDb.Classes
 {
+    [Table("category")]
     public class Category
     {
-        public int Category_id { get; set; }
-        public String Name { get; set; }
+        [Column("categoryId")]
+        [Key]
+        public int CategoryId { get; set; }
 
-        public Category() { }
+        [Column("name")]
+        [Required]
+        public string Name { get; set; }
 
-        public Category(string name)
-        {
-            this.Name=name;
-        }
-
-        public Category(int id, string name)
-        {
-            this.Category_id = id;
-            this.Name=name;
-        }
+        [InverseProperty("Category")]
+        public List<Task> Tasks { get; set; }
     }
 }

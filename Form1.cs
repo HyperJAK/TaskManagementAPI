@@ -2,14 +2,15 @@ using ClassFormWithDb.Classes;
 using MySql.Data.MySqlClient;
 using System.Configuration;
 using System.Xml.Linq;
+using TaskManagementAPI.Classes.Database;
 using static System.Reflection.Metadata.BlobBuilder;
 namespace ClassFormWithDb
 {
     public partial class Form1 : Form
     {
-        private User mainUser = new User();
+        /*private User mainUser = new User();
         private Dictionary<String, User> user_task_mapper = new Dictionary<String, User>();
-        private Dictionary<String, User> task_category_mapper = new Dictionary<String, User>();
+        private Dictionary<String, User> task_category_mapper = new Dictionary<String, User>();*/
 
 
         private string connectionString = ConfigurationManager.ConnectionStrings["MyConnectionString"].ConnectionString;
@@ -19,18 +20,25 @@ namespace ClassFormWithDb
         {
             InitializeComponent();
 
-            Category cat = new Category("Hi");
-            insertCategory(cat);
+            DatabaseLayer mainDb = new DatabaseLayer();
+
+            //here we test if data arrives
+            Console.WriteLine("OUR DATA");
+            foreach (var obj in mainDb.Users)
+            {
+                allInfoBox.Text += obj.Email;
+            }
+
+            foreach (var obj in mainDb.Categories)
+            {
+                allInfoBox.Text += obj.Name;
+            }
 
 
         }
 
-        private void addBook_Click(object sender, EventArgs e)
-        {
-            bookAdder.Visible = true;
 
-        }
-
+        /*
         //Some changes to be made and add functionality before delering to remove links to children
         private void insertTask(Classes.Task task)
         {
@@ -316,7 +324,7 @@ namespace ClassFormWithDb
                             MessageBox.Show("Book added successfully!");
 
                             //Here we call a function that refreshes the local data
-                            /*refreshLatestChanges(name);*/
+                            *//*refreshLatestChanges(name);*//*
 
                             //After it we need to call a function that inserts a connection between subtask and Parent task: Task_has_SubTask TABLE
                         }
@@ -456,7 +464,7 @@ namespace ClassFormWithDb
                             MessageBox.Show("Category added successfully!");
 
                             //refresh local category
-                            /*refreshLatestChanges(category.Name);*/
+                            *//*refreshLatestChanges(category.Name);*//*
                         }
                         else
                         {
@@ -594,7 +602,7 @@ namespace ClassFormWithDb
                             MessageBox.Show("User added successfully!");
 
                             //change
-                            /*refreshLatestChanges(user.Email);*/
+                            *//*refreshLatestChanges(user.Email);*//*
                         }
                         else
                         {
@@ -749,7 +757,7 @@ namespace ClassFormWithDb
             //OLD code example
 
 
-            /*GetBooks(listOfAllBooks);
+            *//*GetBooks(listOfAllBooks);
             foreach (Book book in listOfAllBooks)
             {
                 if (book.title == title && !booksMapper.ContainsKey(title))
@@ -763,32 +771,32 @@ namespace ClassFormWithDb
                     categoryComboBox.Items.AddRange(booksCategoryMapper.Keys.ToArray());
                     break;
                 }
-            }*/
+            }*//*
         }
 
         //Function made to refresh All
         //local changes (either objects or lists or objects or dictionaries)
         private void refreshAllChanges()
         {
-        }
+        }*/
 
 
 
 
         private void submitBook_Click(object sender, EventArgs e)
         {
-           
+
         }
 
         private void allBooksComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-           
+
 
         }
 
         private void saveChanges_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void modifyCategory_CheckedChanged(object sender, EventArgs e)
@@ -803,7 +811,12 @@ namespace ClassFormWithDb
 
         private void categoryComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
+        }
+
+        private void allInfoBox_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

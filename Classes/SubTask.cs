@@ -1,27 +1,24 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using TaskManagementAPI.Classes;
+using TaskManagementAPI.Classes.Database;
 
 namespace ClassFormWithDb.Classes
 {
+    [Table("subtask")]
     public class SubTask
     {
-        public int SubTask_id { get; set; }
+        [Column("subTaskId")]
+        [Key]
+        public int SubTaskId { get; set; }
+
+        [Column("name")]
+        [Required]
         public string Name { get; set; }
-        
 
-        public SubTask() { }
-
-        public SubTask(int subTaskId, string name)
-        {
-            SubTask_id = subTaskId;
-            Name = name;
-
-        }
-
-        public SubTask(string name)
-        {
-            Name = name;
-
-        }
+        [InverseProperty("SubTask")]
+        public List<TaskHasSubTask> TaskHasSubTasks { get; set; }
     }
 
 }
