@@ -51,7 +51,13 @@ namespace TaskManagementAPI_proj.Data
                 Description = "Description for Task 1",
                 Priority = "High",
                 Deadline = DateTime.Now.AddDays(7),
-                Category = "study" // Assuming category ID
+            };
+
+
+            var tag1 = new Models.Tag
+            {
+                Name = "Tag 1",
+                
             };
 
             var subtask1 = new SubTask
@@ -63,6 +69,7 @@ namespace TaskManagementAPI_proj.Data
             project1.Users.Add(user2);
             project1.Tasks.Add(task1);
             task1.SubTasks.Add(subtask1);
+            task1.Tags.Add(tag1);
 
             user1.Projects.Add(project1);
 
@@ -72,6 +79,7 @@ namespace TaskManagementAPI_proj.Data
             context.Projects.Add(project1);
             context.Tasks.Add(task1);
             context.SubTasks.Add(subtask1);
+            context.Tags.Add(tag1);
 
             // Save changes to database
             context.SaveChanges();

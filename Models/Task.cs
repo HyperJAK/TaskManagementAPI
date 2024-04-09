@@ -15,7 +15,7 @@ public partial class Task
 
     public DateTime? Deadline { get; set; }
 
-    public string? Category { get; set; }
+    public ICollection<Tag>? Tags = new List<Tag>();
 
     public string? Status { get; set; }
 

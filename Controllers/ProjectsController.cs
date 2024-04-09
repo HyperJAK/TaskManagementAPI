@@ -64,8 +64,13 @@ namespace TaskManagementAPI_proj.Controllers
         {
             try
             {
-                _projectService.AddTask(projectId, task);
-                return NoContent();
+                var newTask = _projectService.AddTask(projectId, task);
+                return Ok(new
+                {
+                    id = newTask.Id,
+                    name = newTask.Name,
+                });
+
             }
             catch (InvalidOperationException ex)
             {
