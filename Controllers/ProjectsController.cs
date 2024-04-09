@@ -37,6 +37,21 @@ namespace TaskManagementAPI_proj.Controllers
             }
         }
 
+        [HttpGet("{id}/getTasks")]
+        public IActionResult GetProjectTasks(int id)
+        {
+            var project = _projectService.GetProjectTasks(id);
+
+            if (project != null)
+            {
+                return Ok(project);
+            }
+            else
+            {
+                return NotFound();
+            }
+        }
+
         [HttpPost]
         public IActionResult Create(Project newProject)
         {
