@@ -1,6 +1,7 @@
 ﻿using TaskManagementAPI_proj.Models;
 using TaskManagementAPI_proj.Data;
 using Microsoft.EntityFrameworkCore;
+using Task = TaskManagementAPI_proj.Models.Task;
 
 namespace TaskManagementAPI_proj.Services;
 
@@ -25,6 +26,15 @@ public class ProjectService
         return _context.Projects
             .AsNoTracking()
             .SingleOrDefault(p => p.Id == id);
+    }
+
+    public IEnumerable<Task> GetProjectTasks(int id)
+    {
+        return _context.Projects
+        .Where(p => p.Id == id)
+       .SelectMany(u => u.Tasks)
+       .AsNoTracking()
+       .ToList();
     }
 
     public Project Create(Project newProject)
