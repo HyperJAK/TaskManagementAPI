@@ -1,0 +1,318 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\D_Drive\\Data_Saves\\1-Projects\\Visual Studio Projects (C#)\\TaskManagementAPI-proj\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\D_Drive\\Data_Saves\\1-Projects\\Visual Studio Projects (C#)\\TaskManagementAPI-proj\\Migrations\\20240406094815_added_statuses.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20240406094815_added_statuses.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{59EAA116-E084-495C-BDEE-F955863B2689}|TaskManagementAPI-proj.csproj|C:\\D_Drive\\Data_Saves\\1-Projects\\Visual Studio Projects (C#)\\TaskManagementAPI-proj\\models\\project.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{59EAA116-E084-495C-BDEE-F955863B2689}|TaskManagementAPI-proj.csproj|solutionrelative:models\\project.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{59EAA116-E084-495C-BDEE-F955863B2689}|TaskManagementAPI-proj.csproj|c:\\d_drive\\data_saves\\1-projects\\visual studio projects (c#)\\taskmanagementapi-proj\\models\\subtask.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{59EAA116-E084-495C-BDEE-F955863B2689}|TaskManagementAPI-proj.csproj|solutionrelative:models\\subtask.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{59EAA116-E084-495C-BDEE-F955863B2689}|TaskManagementAPI-proj.csproj|c:\\d_drive\\data_saves\\1-projects\\visual studio projects (c#)\\taskmanagementapi-proj\\models\\task.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{59EAA116-E084-495C-BDEE-F955863B2689}|TaskManagementAPI-proj.csproj|solutionrelative:models\\task.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{59EAA116-E084-495C-BDEE-F955863B2689}|TaskManagementAPI-proj.csproj|c:\\d_drive\\data_saves\\1-projects\\visual studio projects (c#)\\taskmanagementapi-proj\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{59EAA116-E084-495C-BDEE-F955863B2689}|TaskManagementAPI-proj.csproj|solutionrelative:models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{59EAA116-E084-495C-BDEE-F955863B2689}|TaskManagementAPI-proj.csproj|c:\\d_drive\\data_saves\\1-projects\\visual studio projects (c#)\\taskmanagementapi-proj\\controllers\\projectscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{59EAA116-E084-495C-BDEE-F955863B2689}|TaskManagementAPI-proj.csproj|solutionrelative:controllers\\projectscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{59EAA116-E084-495C-BDEE-F955863B2689}|TaskManagementAPI-proj.csproj|C:\\D_Drive\\Data_Saves\\1-Projects\\Visual Studio Projects (C#)\\TaskManagementAPI-proj\\controllers\\subtaskscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{59EAA116-E084-495C-BDEE-F955863B2689}|TaskManagementAPI-proj.csproj|solutionrelative:controllers\\subtaskscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{59EAA116-E084-495C-BDEE-F955863B2689}|TaskManagementAPI-proj.csproj|C:\\D_Drive\\Data_Saves\\1-Projects\\Visual Studio Projects (C#)\\TaskManagementAPI-proj\\controllers\\taskscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{59EAA116-E084-495C-BDEE-F955863B2689}|TaskManagementAPI-proj.csproj|solutionrelative:controllers\\taskscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{59EAA116-E084-495C-BDEE-F955863B2689}|TaskManagementAPI-proj.csproj|C:\\D_Drive\\Data_Saves\\1-Projects\\Visual Studio Projects (C#)\\TaskManagementAPI-proj\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{59EAA116-E084-495C-BDEE-F955863B2689}|TaskManagementAPI-proj.csproj|solutionrelative:controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{59EAA116-E084-495C-BDEE-F955863B2689}|TaskManagementAPI-proj.csproj|C:\\D_Drive\\Data_Saves\\1-Projects\\Visual Studio Projects (C#)\\TaskManagementAPI-proj\\services\\projectservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{59EAA116-E084-495C-BDEE-F955863B2689}|TaskManagementAPI-proj.csproj|solutionrelative:services\\projectservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{59EAA116-E084-495C-BDEE-F955863B2689}|TaskManagementAPI-proj.csproj|C:\\D_Drive\\Data_Saves\\1-Projects\\Visual Studio Projects (C#)\\TaskManagementAPI-proj\\services\\subtaskservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{59EAA116-E084-495C-BDEE-F955863B2689}|TaskManagementAPI-proj.csproj|solutionrelative:services\\subtaskservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{59EAA116-E084-495C-BDEE-F955863B2689}|TaskManagementAPI-proj.csproj|C:\\D_Drive\\Data_Saves\\1-Projects\\Visual Studio Projects (C#)\\TaskManagementAPI-proj\\services\\taskservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{59EAA116-E084-495C-BDEE-F955863B2689}|TaskManagementAPI-proj.csproj|solutionrelative:services\\taskservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{59EAA116-E084-495C-BDEE-F955863B2689}|TaskManagementAPI-proj.csproj|C:\\D_Drive\\Data_Saves\\1-Projects\\Visual Studio Projects (C#)\\TaskManagementAPI-proj\\data\\taskmanagercontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{59EAA116-E084-495C-BDEE-F955863B2689}|TaskManagementAPI-proj.csproj|solutionrelative:data\\taskmanagercontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{59EAA116-E084-495C-BDEE-F955863B2689}|TaskManagementAPI-proj.csproj|C:\\D_Drive\\Data_Saves\\1-Projects\\Visual Studio Projects (C#)\\TaskManagementAPI-proj\\data\\dbinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{59EAA116-E084-495C-BDEE-F955863B2689}|TaskManagementAPI-proj.csproj|solutionrelative:data\\dbinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{59EAA116-E084-495C-BDEE-F955863B2689}|TaskManagementAPI-proj.csproj|C:\\D_Drive\\Data_Saves\\1-Projects\\Visual Studio Projects (C#)\\TaskManagementAPI-proj\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{59EAA116-E084-495C-BDEE-F955863B2689}|TaskManagementAPI-proj.csproj|solutionrelative:services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{59EAA116-E084-495C-BDEE-F955863B2689}|TaskManagementAPI-proj.csproj|C:\\D_Drive\\Data_Saves\\1-Projects\\Visual Studio Projects (C#)\\TaskManagementAPI-proj\\data\\extensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{59EAA116-E084-495C-BDEE-F955863B2689}|TaskManagementAPI-proj.csproj|solutionrelative:data\\extensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{59EAA116-E084-495C-BDEE-F955863B2689}|TaskManagementAPI-proj.csproj|C:\\D_Drive\\Data_Saves\\1-Projects\\Visual Studio Projects (C#)\\TaskManagementAPI-proj\\taskmanagementapi-proj.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{59EAA116-E084-495C-BDEE-F955863B2689}|TaskManagementAPI-proj.csproj|solutionrelative:taskmanagementapi-proj.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{59EAA116-E084-495C-BDEE-F955863B2689}|TaskManagementAPI-proj.csproj|C:\\D_Drive\\Data_Saves\\1-Projects\\Visual Studio Projects (C#)\\TaskManagementAPI-proj\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{59EAA116-E084-495C-BDEE-F955863B2689}|TaskManagementAPI-proj.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "20240406094815_added_statuses.cs",
+              "DocumentMoniker": "C:\\D_Drive\\Data_Saves\\1-Projects\\Visual Studio Projects (C#)\\TaskManagementAPI-proj\\Migrations\\20240406094815_added_statuses.cs",
+              "RelativeDocumentMoniker": "Migrations\\20240406094815_added_statuses.cs",
+              "ToolTip": "C:\\D_Drive\\Data_Saves\\1-Projects\\Visual Studio Projects (C#)\\TaskManagementAPI-proj\\Migrations\\20240406094815_added_statuses.cs",
+              "RelativeToolTip": "Migrations\\20240406094815_added_statuses.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-06T09:48:16.224Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\D_Drive\\Data_Saves\\1-Projects\\Visual Studio Projects (C#)\\TaskManagementAPI-proj\\Models\\User.cs",
+              "RelativeDocumentMoniker": "Models\\User.cs",
+              "ToolTip": "C:\\D_Drive\\Data_Saves\\1-Projects\\Visual Studio Projects (C#)\\TaskManagementAPI-proj\\Models\\User.cs",
+              "RelativeToolTip": "Models\\User.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-06T09:44:31.611Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Task.cs",
+              "DocumentMoniker": "C:\\D_Drive\\Data_Saves\\1-Projects\\Visual Studio Projects (C#)\\TaskManagementAPI-proj\\Models\\Task.cs",
+              "RelativeDocumentMoniker": "Models\\Task.cs",
+              "ToolTip": "C:\\D_Drive\\Data_Saves\\1-Projects\\Visual Studio Projects (C#)\\TaskManagementAPI-proj\\Models\\Task.cs",
+              "RelativeToolTip": "Models\\Task.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-06T09:44:21.708Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SubTask.cs",
+              "DocumentMoniker": "C:\\D_Drive\\Data_Saves\\1-Projects\\Visual Studio Projects (C#)\\TaskManagementAPI-proj\\Models\\SubTask.cs",
+              "RelativeDocumentMoniker": "Models\\SubTask.cs",
+              "ToolTip": "C:\\D_Drive\\Data_Saves\\1-Projects\\Visual Studio Projects (C#)\\TaskManagementAPI-proj\\Models\\SubTask.cs",
+              "RelativeToolTip": "Models\\SubTask.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-06T09:44:19.475Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "TaskService.cs",
+              "DocumentMoniker": "C:\\D_Drive\\Data_Saves\\1-Projects\\Visual Studio Projects (C#)\\TaskManagementAPI-proj\\Services\\TaskService.cs",
+              "RelativeDocumentMoniker": "Services\\TaskService.cs",
+              "ToolTip": "C:\\D_Drive\\Data_Saves\\1-Projects\\Visual Studio Projects (C#)\\TaskManagementAPI-proj\\Services\\TaskService.cs",
+              "RelativeToolTip": "Services\\TaskService.cs",
+              "ViewState": "AQIAADcAAAAAAAAAAAAcwDEAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-02T13:15:55.258Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "SubTaskService.cs",
+              "DocumentMoniker": "C:\\D_Drive\\Data_Saves\\1-Projects\\Visual Studio Projects (C#)\\TaskManagementAPI-proj\\Services\\SubTaskService.cs",
+              "RelativeDocumentMoniker": "Services\\SubTaskService.cs",
+              "ToolTip": "C:\\D_Drive\\Data_Saves\\1-Projects\\Visual Studio Projects (C#)\\TaskManagementAPI-proj\\Services\\SubTaskService.cs",
+              "RelativeToolTip": "Services\\SubTaskService.cs",
+              "ViewState": "AQIAADIAAAAAAAAAAAAIwEUAAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-02T13:15:31.125Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ProjectService.cs",
+              "DocumentMoniker": "C:\\D_Drive\\Data_Saves\\1-Projects\\Visual Studio Projects (C#)\\TaskManagementAPI-proj\\Services\\ProjectService.cs",
+              "RelativeDocumentMoniker": "Services\\ProjectService.cs",
+              "ToolTip": "C:\\D_Drive\\Data_Saves\\1-Projects\\Visual Studio Projects (C#)\\TaskManagementAPI-proj\\Services\\ProjectService.cs",
+              "RelativeToolTip": "Services\\ProjectService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-02T13:14:59.612Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "UsersController.cs",
+              "DocumentMoniker": "C:\\D_Drive\\Data_Saves\\1-Projects\\Visual Studio Projects (C#)\\TaskManagementAPI-proj\\Controllers\\UsersController.cs",
+              "RelativeDocumentMoniker": "Controllers\\UsersController.cs",
+              "ToolTip": "C:\\D_Drive\\Data_Saves\\1-Projects\\Visual Studio Projects (C#)\\TaskManagementAPI-proj\\Controllers\\UsersController.cs",
+              "RelativeToolTip": "Controllers\\UsersController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACsAAABGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-02T13:12:42.157Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "TasksController.cs",
+              "DocumentMoniker": "C:\\D_Drive\\Data_Saves\\1-Projects\\Visual Studio Projects (C#)\\TaskManagementAPI-proj\\Controllers\\TasksController.cs",
+              "RelativeDocumentMoniker": "Controllers\\TasksController.cs",
+              "ToolTip": "C:\\D_Drive\\Data_Saves\\1-Projects\\Visual Studio Projects (C#)\\TaskManagementAPI-proj\\Controllers\\TasksController.cs",
+              "RelativeToolTip": "Controllers\\TasksController.cs",
+              "ViewState": "AQIAADQAAAAAAAAAAAAcwDkAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-02T13:11:57.658Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ProjectsController.cs",
+              "DocumentMoniker": "C:\\D_Drive\\Data_Saves\\1-Projects\\Visual Studio Projects (C#)\\TaskManagementAPI-proj\\Controllers\\ProjectsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ProjectsController.cs",
+              "ToolTip": "C:\\D_Drive\\Data_Saves\\1-Projects\\Visual Studio Projects (C#)\\TaskManagementAPI-proj\\Controllers\\ProjectsController.cs",
+              "RelativeToolTip": "Controllers\\ProjectsController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACwAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-02T13:10:44.042Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "C:\\D_Drive\\Data_Saves\\1-Projects\\Visual Studio Projects (C#)\\TaskManagementAPI-proj\\Services\\UserService.cs",
+              "RelativeDocumentMoniker": "Services\\UserService.cs",
+              "ToolTip": "C:\\D_Drive\\Data_Saves\\1-Projects\\Visual Studio Projects (C#)\\TaskManagementAPI-proj\\Services\\UserService.cs",
+              "RelativeToolTip": "Services\\UserService.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAEgAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-02T13:16:16.429Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "SubTasksController.cs",
+              "DocumentMoniker": "C:\\D_Drive\\Data_Saves\\1-Projects\\Visual Studio Projects (C#)\\TaskManagementAPI-proj\\Controllers\\SubTasksController.cs",
+              "RelativeDocumentMoniker": "Controllers\\SubTasksController.cs",
+              "ToolTip": "C:\\D_Drive\\Data_Saves\\1-Projects\\Visual Studio Projects (C#)\\TaskManagementAPI-proj\\Controllers\\SubTasksController.cs",
+              "RelativeToolTip": "Controllers\\SubTasksController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-02T13:11:29.535Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Project.cs",
+              "DocumentMoniker": "C:\\D_Drive\\Data_Saves\\1-Projects\\Visual Studio Projects (C#)\\TaskManagementAPI-proj\\Models\\Project.cs",
+              "RelativeDocumentMoniker": "Models\\Project.cs",
+              "ToolTip": "C:\\D_Drive\\Data_Saves\\1-Projects\\Visual Studio Projects (C#)\\TaskManagementAPI-proj\\Models\\Project.cs",
+              "RelativeToolTip": "Models\\Project.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-02T13:08:12.655Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "TaskManagerContext.cs",
+              "DocumentMoniker": "C:\\D_Drive\\Data_Saves\\1-Projects\\Visual Studio Projects (C#)\\TaskManagementAPI-proj\\Data\\TaskManagerContext.cs",
+              "RelativeDocumentMoniker": "Data\\TaskManagerContext.cs",
+              "ToolTip": "C:\\D_Drive\\Data_Saves\\1-Projects\\Visual Studio Projects (C#)\\TaskManagementAPI-proj\\Data\\TaskManagerContext.cs",
+              "RelativeToolTip": "Data\\TaskManagerContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAA1AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-02T13:06:10.579Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "DbInitializer.cs",
+              "DocumentMoniker": "C:\\D_Drive\\Data_Saves\\1-Projects\\Visual Studio Projects (C#)\\TaskManagementAPI-proj\\Data\\DbInitializer.cs",
+              "RelativeDocumentMoniker": "Data\\DbInitializer.cs",
+              "ToolTip": "C:\\D_Drive\\Data_Saves\\1-Projects\\Visual Studio Projects (C#)\\TaskManagementAPI-proj\\Data\\DbInitializer.cs",
+              "RelativeToolTip": "Data\\DbInitializer.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-02T13:05:37.234Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Extensions.cs",
+              "DocumentMoniker": "C:\\D_Drive\\Data_Saves\\1-Projects\\Visual Studio Projects (C#)\\TaskManagementAPI-proj\\Data\\Extensions.cs",
+              "RelativeDocumentMoniker": "Data\\Extensions.cs",
+              "ToolTip": "C:\\D_Drive\\Data_Saves\\1-Projects\\Visual Studio Projects (C#)\\TaskManagementAPI-proj\\Data\\Extensions.cs",
+              "RelativeToolTip": "Data\\Extensions.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-02T13:04:58.211Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "TaskManagementAPI-proj",
+              "DocumentMoniker": "C:\\D_Drive\\Data_Saves\\1-Projects\\Visual Studio Projects (C#)\\TaskManagementAPI-proj\\TaskManagementAPI-proj.csproj",
+              "RelativeDocumentMoniker": "TaskManagementAPI-proj.csproj",
+              "ToolTip": "C:\\D_Drive\\Data_Saves\\1-Projects\\Visual Studio Projects (C#)\\TaskManagementAPI-proj\\TaskManagementAPI-proj.csproj",
+              "RelativeToolTip": "TaskManagementAPI-proj.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-04-02T13:07:13.911Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\D_Drive\\Data_Saves\\1-Projects\\Visual Studio Projects (C#)\\TaskManagementAPI-proj\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\D_Drive\\Data_Saves\\1-Projects\\Visual Studio Projects (C#)\\TaskManagementAPI-proj\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-02T13:02:07.35Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
