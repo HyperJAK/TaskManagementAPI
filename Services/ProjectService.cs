@@ -45,7 +45,7 @@ public class ProjectService
         return newProject;
     }
 
-    public void AddTask(int projectId, Models.Task task)
+    public Task AddTask(int projectId, Models.Task task)
     {
         var projectToUpdate = _context.Projects.Find(projectId);
 
@@ -64,6 +64,8 @@ public class ProjectService
         _context.Tasks.Add(task);
 
         _context.SaveChanges();
+
+        return task;
     }
 
     public void AddUser(int projectId, User user)

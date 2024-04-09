@@ -1,14 +1,13 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace TaskManagementAPI_proj.Models;
 
-public partial class SubTask
+public partial class Tag
 {
     public int Id { get; set; }
 
     public string Name { get; set; } = null!;
-
-    public bool? Completed { get; set; } = false!;
+    public string? Color { get; set; }
 
 }

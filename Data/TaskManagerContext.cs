@@ -15,4 +15,6 @@ public class TaskManagerContext : DbContext
     public DbSet<TaskManagementAPI_proj.Models.Task> Tasks => Set<TaskManagementAPI_proj.Models.Task>();
     public DbSet<SubTask> SubTasks => Set<SubTask>();
 
+    public DbSet<Tag> Tags => Set<Tag>();
+
 }
