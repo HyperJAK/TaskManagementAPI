@@ -54,7 +54,7 @@ public class UserService
 
     //When adding a project for the user all we have to do is in the controller, we use the ProjectService object to create a project and then 
     //We pass the returned value to this function
-    public void AddProject(int userId, Project project)
+    public Project AddProject(int userId, Project project)
     {
         var userToUpdate = _context.Users.Find(userId);
 
@@ -71,6 +71,8 @@ public class UserService
         userToUpdate.Projects.Add(project);
 
         _context.SaveChanges();
+
+        return project;
     }
 
 

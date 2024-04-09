@@ -79,8 +79,8 @@ namespace TaskManagementAPI_proj.Controllers
         {
             try
             {
-                _userService.AddProject(userId, project);
-                return NoContent();
+                var newProject = _userService.AddProject(userId, project);
+                return Ok(newProject.Id);
             }
             catch (InvalidOperationException ex)
             {
