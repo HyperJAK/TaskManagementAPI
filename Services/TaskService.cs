@@ -55,6 +55,26 @@ public class TaskService
         _context.SaveChanges();
     }
 
+    public IEnumerable<SubTask> GetTaskSubTasks(int id)
+    {
+        return _context.Tasks
+        .Include(p => p.SubTasks)
+        .Where(p => p.Id == id)
+       .SelectMany(u => u.SubTasks)
+       .AsNoTracking()
+       .ToList();
+    }
+
+    public IEnumerable<Tag> GetTaskTags(int id)
+    {
+        return _context.Tasks
+        .Include(p => p.Tags)
+        .Where(p => p.Id == id)
+       .SelectMany(u => u.Tags)
+       .AsNoTracking()
+       .ToList();
+    }
+
 
     public void UpdateTask(int taskId, Models.Task newTask)
     {

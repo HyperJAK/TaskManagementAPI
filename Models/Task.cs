@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace TaskManagementAPI_proj.Models;
 
-public partial class Task
+public class Task
 {
     public int Id { get; set; }
 
@@ -15,9 +15,9 @@ public partial class Task
 
     public DateTime? Deadline { get; set; }
 
-    public ICollection<Tag>? Tags = new List<Tag>();
+    public virtual ICollection<Tag>? Tags { get; set; } = new List<Tag>();
 
     public string? Status { get; set; }
 
-    public ICollection<SubTask>? SubTasks = new List<SubTask>();
+    public virtual ICollection<SubTask>? SubTasks { get; set; } = new List<SubTask>();
 }

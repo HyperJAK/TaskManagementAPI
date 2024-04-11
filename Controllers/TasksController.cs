@@ -45,19 +45,37 @@ namespace TaskManagementAPI_proj.Controllers
             return CreatedAtAction(nameof(GetById), new { id = task.Id }, task);
         }
 
-        [HttpPost("{taskId}/addsubtask")]
-        public IActionResult AddSubTask(int taskId, SubTask newSubTask)
+        [HttpGet("{taskId}/getSubTasks")]
+        public IActionResult GetTaskSubTasks(int taskId)
         {
-            try
+            var subtasks = _taskService.GetTaskSubTasks(taskId);
+
+            if (subtasks != null)
             {
-                _taskService.AddSubTask(taskId, newSubTask);
-                return NoContent();
+                return Ok(subtasks);
             }
-            catch (InvalidOperationException ex)
+            else
             {
-                return NotFound(ex.Message);
+                return NotFound();
             }
         }
+
+        [HttpGet("{taskId}/getTags")]
+        public IActionResult GetTaskTags(int taskId)
+        {
+            var tags = _taskService.GetTaskTags(taskId);
+
+            if (tags != null)
+            {
+                return Ok(tags);
+            }
+            else
+            {
+                return NotFound();
+            }
+        }
+
+
 
         [HttpPut("{id}")]
         public IActionResult UpdateTask(int id, Models.Task newTask)
