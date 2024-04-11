@@ -45,27 +45,45 @@ namespace TaskManagementAPI_proj.Controllers
             return CreatedAtAction(nameof(GetById), new { id = task.Id }, task);
         }
 
-        [HttpPost("{taskId}/addsubtask")]
-        public IActionResult AddSubTask(int taskId, SubTask newSubTask)
+        [HttpGet("{taskId}/getSubTasks")]
+        public IActionResult GetTaskSubTasks(int taskId)
         {
-            try
+            var subtasks = _taskService.GetTaskSubTasks(taskId);
+
+            if (subtasks != null)
             {
-                _taskService.AddSubTask(taskId, newSubTask);
-                return NoContent();
+                return Ok(subtasks);
             }
-            catch (InvalidOperationException ex)
+            else
             {
-                return NotFound(ex.Message);
+                return NotFound();
             }
         }
+
+        [HttpGet("{taskId}/getTags")]
+        public IActionResult GetTaskTags(int taskId)
+        {
+            var tags = _taskService.GetTaskTags(taskId);
+
+            if (tags != null)
+            {
+                return Ok(tags);
+            }
+            else
+            {
+                return NotFound();
+            }
+        }
+
+
 
         [HttpPut("{id}")]
         public IActionResult UpdateTask(int id, Models.Task newTask)
         {
             try
             {
-                _taskService.UpdateTask(id, newTask);
-                return NoContent();
+                var updatedTask = _taskService.UpdateTask(id, newTask);
+                return Ok(updatedTask);
             }
             catch (InvalidOperationException ex)
             {
@@ -73,11 +91,69 @@ namespace TaskManagementAPI_proj.Controllers
             }
         }
 
+        [HttpPost("{taskId}/addSubTask")]
+        public IActionResult AddSubTask(int taskId, Models.SubTask subtask)
+        {
+            try
+            {
+                var newSubTask = _taskService.AddSubTask(taskId, subtask);
+                return Ok(new
+                {
+                    id = newSubTask.Id,
+                    name = newSubTask.Name,
+                    completed = false
+                });
+
+            }
+            catch (InvalidOperationException ex)
+            {
+                return NotFound(ex.Message);
+            }
+        }
+
+        [HttpPost("{taskId}/addTag")]
+        public IActionResult AddTag(int taskId, Models.Tag tag)
+        {
+            try
+            {
+                var newTag = _taskService.AddTag(taskId, tag);
+                return Ok(new
+                {
+                    id = newTag.Id,
+                    name = newTag.Name,
+                    color = newTag.Color
+                });
+
+            }
+            catch (InvalidOperationException ex)
+            {
+                return NotFound(ex.Message);
+            }
+        }
+
+        [HttpDelete("{taskId}/removeAllSubTasks")]
+        public IActionResult DeleteAllSubTasks(int taskId)
+        {
+            try
+            {
+                _taskService.DeleteAllSubTasks(taskId);
+                return Ok(new{
+                    id = taskId
+                });
+
+            }
+            catch (InvalidOperationException ex)
+            {
+                return NotFound(ex.Message);
+            }
+        }
+
+
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
-            _taskService.DeleteById(id);
-            return Ok();
+            var deletedTask = _taskService.DeleteById(id);
+            return Ok(deletedTask);
         }
     }
 }

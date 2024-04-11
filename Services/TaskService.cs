@@ -1,6 +1,7 @@
 ﻿using TaskManagementAPI_proj.Models;
 using TaskManagementAPI_proj.Data;
 using Microsoft.EntityFrameworkCore;
+using Task = TaskManagementAPI_proj.Models.Task;
 
 namespace TaskManagementAPI_proj.Services;
 
@@ -34,7 +35,7 @@ public class TaskService
         return newTask;
     }
 
-    public void AddSubTask(int taskId, SubTask newSubTask)
+    public SubTask AddSubTask(int taskId, SubTask newSubTask)
     {
         var taskToUpdate = _context.Tasks.Find(taskId);
 
@@ -53,10 +54,55 @@ public class TaskService
         _context.SubTasks.Add(newSubTask);
 
         _context.SaveChanges();
+
+        return newSubTask;
+    }
+
+    public Tag AddTag(int taskId, Tag newTag)
+    {
+        var taskToUpdate = _context.Tasks.Find(taskId);
+
+        if (taskToUpdate is null)
+        {
+            throw new InvalidOperationException("Task does not exist");
+        }
+
+        if (taskToUpdate.Tags is null)
+        {
+            taskToUpdate.Tags = new List<Tag>();
+        }
+
+        taskToUpdate.Tags.Add(newTag);
+
+        _context.Tags.Add(newTag);
+
+        _context.SaveChanges();
+
+        return newTag;
+    }
+
+    public IEnumerable<SubTask> GetTaskSubTasks(int id)
+    {
+        return _context.Tasks
+        .Include(p => p.SubTasks)
+        .Where(p => p.Id == id)
+       .SelectMany(u => u.SubTasks)
+       .AsNoTracking()
+       .ToList();
+    }
+
+    public IEnumerable<Tag> GetTaskTags(int id)
+    {
+        return _context.Tasks
+        .Include(p => p.Tags)
+        .Where(p => p.Id == id)
+       .SelectMany(u => u.Tags)
+       .AsNoTracking()
+       .ToList();
     }
 
 
-    public void UpdateTask(int taskId, Models.Task newTask)
+    public Task UpdateTask(int taskId, Models.Task newTask)
     {
         var taskToUpdate = _context.Tasks.Find(taskId);
 
@@ -70,15 +116,39 @@ public class TaskService
         _context.Tasks.Update(taskToUpdate);
 
         _context.SaveChanges();
+
+        return taskToUpdate;
     }
 
-    public void DeleteById(int id)
+    public void DeleteAllSubTasks(int id)
+    {
+        var taskToDelete = _context.Tasks.Include(t => t.SubTasks).FirstOrDefault(t => t.Id == id);
+
+    if (taskToDelete != null && taskToDelete.SubTasks.Any())
+    {
+        while (taskToDelete.SubTasks.Any())
+        {
+            var subTaskToRemove = taskToDelete.SubTasks.First();
+            taskToDelete.SubTasks.Remove(subTaskToRemove);
+        }
+        
+        _context.SaveChanges();
+    }
+
+    }
+
+
+    public Task DeleteById(int id)
     {
         var taskToDelete = _context.Tasks.Find(id);
+        var tempSaved = taskToDelete;
         if (taskToDelete is not null)
         {
             _context.Tasks.Remove(taskToDelete);
             _context.SaveChanges();
+
+            return tempSaved;
         }
+        return tempSaved;
     }
 }

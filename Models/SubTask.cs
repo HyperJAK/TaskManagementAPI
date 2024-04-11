@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace TaskManagementAPI_proj.Models;
 
-public partial class SubTask
+public class SubTask
 {
     public int Id { get; set; }
 

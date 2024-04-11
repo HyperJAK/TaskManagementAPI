@@ -17,6 +17,7 @@ builder.Services.AddScoped<UserService>();
 builder.Services.AddScoped<ProjectService>();
 builder.Services.AddScoped<TaskService>();
 builder.Services.AddScoped<SubTaskService>();
+builder.Services.AddScoped<TagService>();
 
 
 var app = builder.Build();
