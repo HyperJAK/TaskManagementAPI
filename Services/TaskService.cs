@@ -120,6 +120,23 @@ public class TaskService
         return taskToUpdate;
     }
 
+    public void DeleteAllSubTasks(int id)
+    {
+        var taskToDelete = _context.Tasks.Include(t => t.SubTasks).FirstOrDefault(t => t.Id == id);
+
+    if (taskToDelete != null && taskToDelete.SubTasks.Any())
+    {
+        while (taskToDelete.SubTasks.Any())
+        {
+            var subTaskToRemove = taskToDelete.SubTasks.First();
+            taskToDelete.SubTasks.Remove(subTaskToRemove);
+        }
+        
+        _context.SaveChanges();
+    }
+
+    }
+
 
     public Task DeleteById(int id)
     {
