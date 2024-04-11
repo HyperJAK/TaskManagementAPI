@@ -50,8 +50,13 @@ namespace TaskManagementAPI_proj.Controllers
         {
             try
             {
-                _subTaskService.UpdateSubTask(id, newSubTask);
-                return NoContent();
+                var subtask = _subTaskService.UpdateSubTask(id, newSubTask);
+                return Ok(new
+                {
+                    id = id,
+                    name = subtask.Name,
+                    completed = subtask.Completed
+                });
             }
             catch (InvalidOperationException ex)
             {

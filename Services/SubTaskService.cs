@@ -56,7 +56,7 @@ public class SubTaskService
     }*/
 
 
-    public void UpdateSubTask(int subTaskId, SubTask newSubTask)
+    public SubTask UpdateSubTask(int subTaskId, SubTask newSubTask)
     {
         var subTaskToUpdate = _context.SubTasks.Find(subTaskId);
 
@@ -65,10 +65,14 @@ public class SubTaskService
             throw new InvalidOperationException("SubTask does not exist");
         }
 
-        subTaskToUpdate = newSubTask;
-        _context.SubTasks.Update(subTaskToUpdate);
+        subTaskToUpdate.Name = newSubTask.Name;
+        subTaskToUpdate.Completed = newSubTask.Completed;
+
+    _context.SubTasks.Update(subTaskToUpdate);
 
         _context.SaveChanges();
+
+        return newSubTask;
     }
 
     public void DeleteById(int id)
