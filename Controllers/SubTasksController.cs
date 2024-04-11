@@ -67,8 +67,15 @@ namespace TaskManagementAPI_proj.Controllers
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
-            _subTaskService.DeleteById(id);
-            return Ok();
+            try{
+                _subTaskService.DeleteById(id);
+                return Ok(new{
+                    id = id
+                });
+            }catch(InvalidOperationException ex){
+                return NotFound(ex.Message);
+            }
+            
         }
     }
 }
