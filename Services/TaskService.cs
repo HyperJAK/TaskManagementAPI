@@ -1,6 +1,7 @@
 ﻿using TaskManagementAPI_proj.Models;
 using TaskManagementAPI_proj.Data;
 using Microsoft.EntityFrameworkCore;
+using Task = TaskManagementAPI_proj.Models.Task;
 
 namespace TaskManagementAPI_proj.Services;
 
@@ -76,7 +77,7 @@ public class TaskService
     }
 
 
-    public void UpdateTask(int taskId, Models.Task newTask)
+    public Task UpdateTask(int taskId, Models.Task newTask)
     {
         var taskToUpdate = _context.Tasks.Find(taskId);
 
@@ -90,15 +91,21 @@ public class TaskService
         _context.Tasks.Update(taskToUpdate);
 
         _context.SaveChanges();
+
+        return taskToUpdate;
     }
 
-    public void DeleteById(int id)
+    public Task DeleteById(int id)
     {
         var taskToDelete = _context.Tasks.Find(id);
+        var tempSaved = taskToDelete;
         if (taskToDelete is not null)
         {
             _context.Tasks.Remove(taskToDelete);
             _context.SaveChanges();
+
+            return tempSaved;
         }
+        return tempSaved;
     }
 }

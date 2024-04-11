@@ -82,8 +82,8 @@ namespace TaskManagementAPI_proj.Controllers
         {
             try
             {
-                _taskService.UpdateTask(id, newTask);
-                return NoContent();
+                var updatedTask = _taskService.UpdateTask(id, newTask);
+                return Ok(updatedTask);
             }
             catch (InvalidOperationException ex)
             {
@@ -94,8 +94,8 @@ namespace TaskManagementAPI_proj.Controllers
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
-            _taskService.DeleteById(id);
-            return Ok();
+            var deletedTask = _taskService.DeleteById(id);
+            return Ok(deletedTask);
         }
     }
 }
