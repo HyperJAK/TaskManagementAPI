@@ -35,7 +35,7 @@ public class TaskService
         return newTask;
     }
 
-    public void AddSubTask(int taskId, SubTask newSubTask)
+    public SubTask AddSubTask(int taskId, SubTask newSubTask)
     {
         var taskToUpdate = _context.Tasks.Find(taskId);
 
@@ -54,6 +54,8 @@ public class TaskService
         _context.SubTasks.Add(newSubTask);
 
         _context.SaveChanges();
+
+        return newSubTask;
     }
 
     public IEnumerable<SubTask> GetTaskSubTasks(int id)
@@ -94,6 +96,7 @@ public class TaskService
 
         return taskToUpdate;
     }
+
 
     public Task DeleteById(int id)
     {

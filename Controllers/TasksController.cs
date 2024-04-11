@@ -91,6 +91,26 @@ namespace TaskManagementAPI_proj.Controllers
             }
         }
 
+        [HttpPost("{taskId}/addSubTask")]
+        public IActionResult AddSubTask(int taskId, Models.SubTask subtask)
+        {
+            try
+            {
+                var newSubTask = _taskService.AddSubTask(taskId, subtask);
+                return Ok(new
+                {
+                    id = newSubTask.Id,
+                    name = newSubTask.Name,
+                    completed = false
+                });
+
+            }
+            catch (InvalidOperationException ex)
+            {
+                return NotFound(ex.Message);
+            }
+        }
+
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
