@@ -58,6 +58,29 @@ public class TaskService
         return newSubTask;
     }
 
+    public Tag AddTag(int taskId, Tag newTag)
+    {
+        var taskToUpdate = _context.Tasks.Find(taskId);
+
+        if (taskToUpdate is null)
+        {
+            throw new InvalidOperationException("Task does not exist");
+        }
+
+        if (taskToUpdate.Tags is null)
+        {
+            taskToUpdate.Tags = new List<Tag>();
+        }
+
+        taskToUpdate.Tags.Add(newTag);
+
+        _context.Tags.Add(newTag);
+
+        _context.SaveChanges();
+
+        return newTag;
+    }
+
     public IEnumerable<SubTask> GetTaskSubTasks(int id)
     {
         return _context.Tasks

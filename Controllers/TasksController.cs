@@ -111,6 +111,27 @@ namespace TaskManagementAPI_proj.Controllers
             }
         }
 
+        [HttpPost("{taskId}/addTag")]
+        public IActionResult AddTag(int taskId, Models.Tag tag)
+        {
+            try
+            {
+                var newTag = _taskService.AddTag(taskId, tag);
+                return Ok(new
+                {
+                    id = newTag.Id,
+                    name = newTag.Name,
+                    color = newTag.Color
+                });
+
+            }
+            catch (InvalidOperationException ex)
+            {
+                return NotFound(ex.Message);
+            }
+        }
+
+
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
