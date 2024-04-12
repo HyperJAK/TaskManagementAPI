@@ -61,8 +61,6 @@ public class ProjectService
 
         projectToUpdate.Tasks.Add(task);
 
-        _context.Tasks.Add(task);
-
         _context.SaveChanges();
 
         return task;
