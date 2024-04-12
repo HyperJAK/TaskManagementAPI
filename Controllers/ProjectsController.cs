@@ -37,6 +37,21 @@ namespace TaskManagementAPI_proj.Controllers
             }
         }
 
+        [HttpGet("getExternalProjectsForUser/{userId}")]
+        public IActionResult GetProjectsByContainedUser(int userId)
+        {
+            var projects = _projectService.GetProjectsByContainedUser(userId);
+
+            if (projects != null)
+            {
+                return Ok(projects);
+            }
+            else
+            {
+                return NotFound();
+            }
+        }
+
         [HttpGet("{id}/getTasks")]
         public IActionResult GetProjectTasks(int id)
         {
@@ -56,7 +71,7 @@ namespace TaskManagementAPI_proj.Controllers
         public IActionResult Create(Project newProject)
         {
             var project = _projectService.Create(newProject);
-            return CreatedAtAction(nameof(GetById), new { id = project.Id }, project);
+            return Ok(project.Id);
         }
 
         [HttpPost("{projectId}/addtask")]
@@ -78,13 +93,15 @@ namespace TaskManagementAPI_proj.Controllers
             }
         }
 
-        [HttpPost("{projectId}/adduser")]
-        public IActionResult AddUser(int projectId, User user)
+        [HttpPost("{projectId}/adduser/{userId}")]
+        public IActionResult AddUser(int projectId, int userId)
         {
             try
             {
-                _projectService.AddUser(projectId, user);
-                return NoContent();
+                var newUser = _projectService.AddUser(projectId, userId);
+                return Ok(new{
+                    id = newUser.Id
+                });
             }
             catch (InvalidOperationException ex)
             {

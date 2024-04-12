@@ -40,11 +40,11 @@ namespace TaskManagementAPI_proj.Controllers
         [HttpGet("{id}/getProjects")]
         public IActionResult GetUserProjects(int id)
         {
-            var user = _userService.GetUserProjects(id);
+            var projects = _userService.GetUserProjects(id);
 
-            if (user != null)
+            if (projects != null)
             {
-                return Ok(user);
+                return Ok(projects);
             }
             else
             {
@@ -73,20 +73,7 @@ namespace TaskManagementAPI_proj.Controllers
             var user = _userService.Create(newUser);
             return CreatedAtAction(nameof(GetById), new { id = user.Id }, user);
         }
-
-        [HttpPost("{userId}/addproject")]
-        public IActionResult AddProject(int userId, Project project)
-        {
-            try
-            {
-                var newProject = _userService.AddProject(userId, project);
-                return Ok(newProject.Id);
-            }
-            catch (InvalidOperationException ex)
-            {
-                return NotFound(ex.Message);
-            }
-        }
+        
 
         [HttpPut("{id}")]
         public IActionResult UpdateUser(int id, User newUser)

@@ -23,6 +23,4 @@ public class User
 
     public sbyte? Disabled { get; set; }
 
-    public virtual ICollection<Project>? Projects { get; set; } = new List<Project>();
-
 }

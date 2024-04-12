@@ -37,6 +37,13 @@ public class ProjectService
        .ToList();
     }
 
+    public IEnumerable<Project> GetProjectsByContainedUser(int userId)
+{
+    return _context.Projects
+        .Where(p => p.Users.Any(u => u.Id == userId))
+        .ToList();
+}
+
     public Project Create(Project newProject)
     {
         _context.Projects.Add(newProject);
@@ -66,26 +73,30 @@ public class ProjectService
         return task;
     }
 
-    public void AddUser(int projectId, User user)
+    public User AddUser(int projectId, int userId)
+{
+    var projectToUpdate = _context.Projects.Include(p => p.Users).FirstOrDefault(p => p.Id == projectId);
+    var userToAdd = _context.Users.Find(userId);
+
+    if (projectToUpdate is null)
     {
-        var projectToUpdate = _context.Projects.Find(projectId);
+        throw new InvalidOperationException("Project does not exist");
+    }
 
-        if (projectToUpdate is null)
-        {
-            throw new InvalidOperationException("Project does not exist");
-        }
+    if (projectToUpdate.Users is null)
+    {
+        projectToUpdate.Users = new List<User>();
+    }
 
-        if (projectToUpdate.Users is null)
-        {
-            projectToUpdate.Users = new List<User>();
-        }
-
-        projectToUpdate.Users.Add(user);
-
-        _context.Users.Add(user);
-
+    // Check if the user is already associated with the project
+    if (!projectToUpdate.Users.Any(u => u.Id == userId))
+    {
+        projectToUpdate.Users.Add(userToAdd);
         _context.SaveChanges();
     }
+
+    return userToAdd;
+}
 
 
     public void UpdateProject(int projectId, Project newProject)

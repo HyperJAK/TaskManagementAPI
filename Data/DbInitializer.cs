@@ -71,7 +71,7 @@ namespace TaskManagementAPI_proj.Data
             task1.SubTasks.Add(subtask1);
             task1.Tags.Add(tag1);
 
-            user1.Projects.Add(project1);
+            project1.CreatorId = 1;
 
             // Add entities to context
             context.Users.Add(user1);

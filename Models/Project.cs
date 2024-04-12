@@ -13,6 +13,8 @@ public class Project
 
     public DateTime? CreationDate { get; set; }
 
+    public int CreatorId { get; set; }
+
     public virtual ICollection<Task>? Tasks { get; set; } = new List<Task>();
     public virtual ICollection<User>? Users { get; set; } = new List<User>();
 }

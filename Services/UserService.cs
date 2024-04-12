@@ -37,9 +37,8 @@ public class UserService
 
     public IEnumerable<Project> GetUserProjects(int id)
     {
-        return _context.Users
-        .Where(u => u.Id == id)
-       .SelectMany(u => u.Projects)
+        return _context.Projects
+        .Where(u => u.CreatorId == id)
        .AsNoTracking()
        .ToList();
     }
@@ -54,7 +53,7 @@ public class UserService
 
     //When adding a project for the user all we have to do is in the controller, we use the ProjectService object to create a project and then 
     //We pass the returned value to this function
-    public Project AddProject(int userId, Project project)
+    /*public Project AddProject(int userId, Project project)
     {
         var userToUpdate = _context.Users.Find(userId);
 
@@ -73,7 +72,7 @@ public class UserService
         _context.SaveChanges();
 
         return project;
-    }
+    }*/
 
 
     public void UpdateUser(int userId, User newUser)
