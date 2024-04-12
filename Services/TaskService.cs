@@ -118,6 +118,24 @@ public class TaskService
         return taskToUpdate;
     }
 
+    public Task UpdateTaskStatus(int taskId, Task newTask)
+    {
+        var taskToUpdate = _context.Tasks.Find(taskId);
+
+        if (taskToUpdate is null)
+        {
+            throw new InvalidOperationException("Task does not exist");
+        }
+
+        taskToUpdate.Status = newTask.Status;
+
+        _context.Tasks.Update(taskToUpdate);
+
+        _context.SaveChanges();
+
+        return newTask;
+    }
+
     public void DeleteAllSubTasks(int id)
     {
         var taskToDelete = _context.Tasks.Include(t => t.SubTasks).FirstOrDefault(t => t.Id == id);

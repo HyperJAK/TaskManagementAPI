@@ -91,6 +91,22 @@ namespace TaskManagementAPI_proj.Controllers
             }
         }
 
+        [HttpPut("{id}/updateTaskStatus")]
+        public IActionResult UpdateTaskStatus(int id, Models.Task newTask)
+        {
+            try
+            {
+                var updatedTask = _taskService.UpdateTaskStatus(id, newTask);
+                return Ok(new{
+                    status = updatedTask.Status
+                });
+            }
+            catch (InvalidOperationException ex)
+            {
+                return NotFound(ex.Message);
+            }
+        }
+
         [HttpPost("{taskId}/addSubTask")]
         public IActionResult AddSubTask(int taskId, Models.SubTask subtask)
         {
