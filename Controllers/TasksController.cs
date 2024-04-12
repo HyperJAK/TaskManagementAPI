@@ -148,6 +148,23 @@ namespace TaskManagementAPI_proj.Controllers
             }
         }
 
+        [HttpDelete("{taskId}/removeAllTags")]
+        public IActionResult DeleteAllTags(int taskId)
+        {
+            try
+            {
+                _taskService.DeleteAllTags(taskId);
+                return Ok(new{
+                    id = taskId
+                });
+
+            }
+            catch (InvalidOperationException ex)
+            {
+                return NotFound(ex.Message);
+            }
+        }
+
 
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)

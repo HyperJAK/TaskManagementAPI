@@ -51,8 +51,6 @@ public class TaskService
 
         taskToUpdate.SubTasks.Add(newSubTask);
 
-        _context.SubTasks.Add(newSubTask);
-
         _context.SaveChanges();
 
         return newSubTask;
@@ -130,6 +128,23 @@ public class TaskService
         {
             var subTaskToRemove = taskToDelete.SubTasks.First();
             taskToDelete.SubTasks.Remove(subTaskToRemove);
+        }
+        
+        _context.SaveChanges();
+    }
+
+    }
+
+    public void DeleteAllTags(int id)
+    {
+        var taskToDelete = _context.Tasks.Include(t => t.Tags).FirstOrDefault(t => t.Id == id);
+
+    if (taskToDelete != null && taskToDelete.Tags.Any())
+    {
+        while (taskToDelete.Tags.Any())
+        {
+            var tagToRemove = taskToDelete.Tags.First();
+            taskToDelete.Tags.Remove(tagToRemove);
         }
         
         _context.SaveChanges();

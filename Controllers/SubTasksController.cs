@@ -53,7 +53,7 @@ namespace TaskManagementAPI_proj.Controllers
                 var subtask = _subTaskService.UpdateSubTask(id, newSubTask);
                 return Ok(new
                 {
-                    id = id,
+                    id = subtask.Id,
                     name = subtask.Name,
                     completed = subtask.Completed
                 });

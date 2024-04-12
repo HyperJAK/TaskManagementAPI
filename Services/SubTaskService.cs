@@ -68,7 +68,7 @@ public class SubTaskService
         subTaskToUpdate.Name = newSubTask.Name;
         subTaskToUpdate.Completed = newSubTask.Completed;
 
-    _context.SubTasks.Update(subTaskToUpdate);
+        _context.SubTasks.Update(subTaskToUpdate);
 
         _context.SaveChanges();
 
