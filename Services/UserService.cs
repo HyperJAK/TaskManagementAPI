@@ -45,10 +45,18 @@ public class UserService
 
     public User Create(User newUser)
     {
+        var existingUser = _context.Users.FirstOrDefault(u => u.Email == newUser.Email);
+
+
+        if (existingUser != null)
+        {
+            throw new InvalidOperationException("User already exists in the database");
+        }
+
         _context.Users.Add(newUser);
         _context.SaveChanges();
-
         return newUser;
+        
     }
 
     //When adding a project for the user all we have to do is in the controller, we use the ProjectService object to create a project and then 

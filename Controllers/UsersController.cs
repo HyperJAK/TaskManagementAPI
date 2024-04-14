@@ -70,8 +70,15 @@ namespace TaskManagementAPI_proj.Controllers
         [HttpPost("create")]
         public IActionResult Create(User newUser)
         {
-            var user = _userService.Create(newUser);
-            return CreatedAtAction(nameof(GetById), new { id = user.Id }, user);
+            try
+            {
+                var user = _userService.Create(newUser);
+                return CreatedAtAction(nameof(GetById), new { id = user.Id }, user);
+            }
+            catch (InvalidOperationException ex)
+            {
+                return NotFound(ex.Message);
+            }
         }
         
 

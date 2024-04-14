@@ -73,14 +73,19 @@ public class ProjectService
         return task;
     }
 
-    public User AddUser(int projectId, int userId)
+    public User AddUser(int projectId, string email)
 {
     var projectToUpdate = _context.Projects.Include(p => p.Users).FirstOrDefault(p => p.Id == projectId);
-    var userToAdd = _context.Users.Find(userId);
+    var userToAdd = _context.Users.FirstOrDefault(u => u.Email == email);
 
     if (projectToUpdate is null)
     {
         throw new InvalidOperationException("Project does not exist");
+    }
+
+    if (userToAdd is null)
+    {
+        throw new InvalidOperationException("User does not exist");
     }
 
     if (projectToUpdate.Users is null)
@@ -88,8 +93,7 @@ public class ProjectService
         projectToUpdate.Users = new List<User>();
     }
 
-    // Check if the user is already associated with the project
-    if (!projectToUpdate.Users.Any(u => u.Id == userId))
+    if (!projectToUpdate.Users.Any(u => u.Id == userToAdd.Id))
     {
         projectToUpdate.Users.Add(userToAdd);
         _context.SaveChanges();

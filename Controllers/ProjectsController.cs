@@ -93,12 +93,12 @@ namespace TaskManagementAPI_proj.Controllers
             }
         }
 
-        [HttpPost("{projectId}/adduser/{userId}")]
-        public IActionResult AddUser(int projectId, int userId)
+        [HttpPost("{projectId}/adduser/{email}")]
+        public IActionResult AddUser(int projectId, string email)
         {
             try
             {
-                var newUser = _projectService.AddUser(projectId, userId);
+                var newUser = _projectService.AddUser(projectId, email);
                 return Ok(new{
                     id = newUser.Id
                 });
