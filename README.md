@@ -61,7 +61,8 @@ Users,
 Projects, 
 Tasks, 
 Subtasks,
-Tags 
+Tags, 
+ProjectUser  
 
 Each of these tables have a connection with another table and we are using Linq to manage all the data coming and going from the database
 ```  

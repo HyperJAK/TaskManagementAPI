@@ -67,6 +67,26 @@ namespace TaskManagementAPI_proj.Controllers
             }
         }
 
+        [HttpGet("{id}/getUserRole/{userId}")]
+        public IActionResult GetUserRole(int id, int userId)
+        {
+
+            try{
+                var userRole = _projectService.GetUserRole(id, userId);
+
+
+                return Ok(new
+                {
+                    role = userRole,
+                });
+            }catch(InvalidOperationException ex){
+
+                return NotFound(ex.Message);
+            }
+              
+            
+        }
+
         [HttpPost]
         public IActionResult Create(Project newProject)
         {
@@ -93,21 +113,27 @@ namespace TaskManagementAPI_proj.Controllers
             }
         }
 
-        [HttpPost("{projectId}/adduser/{email}")]
-        public IActionResult AddUser(int projectId, string email)
+        [HttpPost("{projectId}/adduser/{email}/{role}")]
+        public IActionResult AddUser(int projectId, string email, string role)
         {
             try
             {
-                var newUser = _projectService.AddUser(projectId, email);
-                return Ok(new{
-                    id = newUser.Id
-                });
+                var newUser = _projectService.AddUser(projectId, email, role);
+                if(newUser != null){
+                    return Ok(new{
+                        id = newUser.UserId
+                    });
+                }
+                return null;
+                
             }
             catch (InvalidOperationException ex)
             {
                 return NotFound(ex.Message);
             }
         }
+
+
 
         [HttpPut("{id}")]
         public IActionResult UpdateProject(int id, Project newProject)
