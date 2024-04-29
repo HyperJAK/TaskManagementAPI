@@ -16,5 +16,5 @@ public class Project
     public int CreatorId { get; set; }
 
     public virtual ICollection<Task>? Tasks { get; set; } = new List<Task>();
-    public virtual ICollection<User>? Users { get; set; } = new List<User>();
+    public virtual ICollection<ProjectUser>? ProjectUsers { get; set; } = new List<ProjectUser>();
 }

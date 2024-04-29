@@ -65,8 +65,16 @@ namespace TaskManagementAPI_proj.Data
                 Name = "Subtask 1"
             };
 
+            var projectUser2 = new ProjectUser
+        {
+            User = user2,
+            Project = project1,
+            Role = "guest"
+        };
+
             // Associating entities
-            project1.Users.Add(user2);
+            project1.ProjectUsers.Add(projectUser2);
+
             project1.Tasks.Add(task1);
             task1.SubTasks.Add(subtask1);
             task1.Tags.Add(tag1);

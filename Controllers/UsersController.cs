@@ -73,7 +73,7 @@ namespace TaskManagementAPI_proj.Controllers
             try
             {
                 var user = _userService.Create(newUser);
-                return CreatedAtAction(nameof(GetById), new { id = user.Id }, user);
+                return CreatedAtAction(nameof(GetById), new { id = user.Id, email = user.Email }, user);
             }
             catch (InvalidOperationException ex)
             {
