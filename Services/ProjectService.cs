@@ -37,10 +37,18 @@ public class ProjectService
        .ToList();
     }
 
+    public string GetUserRole(int id, int userId)
+    {
+        return _context.ProjectUsers
+        .Where(p => p.ProjectId == id && p.UserId == userId)
+        .Select(u => u.Role)
+        .FirstOrDefault();
+    }
+
     public IEnumerable<Project> GetProjectsByContainedUser(int userId)
 {
     return _context.Projects
-        .Where(p => p.Users.Any(u => u.Id == userId))
+        .Where(p => p.ProjectUsers.Any(u => u.UserId == userId))
         .ToList();
 }
 
@@ -73,9 +81,9 @@ public class ProjectService
         return task;
     }
 
-    public User AddUser(int projectId, string email)
+    public ProjectUser AddUser(int projectId, string email, string role)
 {
-    var projectToUpdate = _context.Projects.Include(p => p.Users).FirstOrDefault(p => p.Id == projectId);
+    var projectToUpdate = _context.Projects.Include(p => p.ProjectUsers).FirstOrDefault(p => p.Id == projectId);
     var userToAdd = _context.Users.FirstOrDefault(u => u.Email == email);
 
     if (projectToUpdate is null)
@@ -88,18 +96,28 @@ public class ProjectService
         throw new InvalidOperationException("User does not exist");
     }
 
-    if (projectToUpdate.Users is null)
+    if (projectToUpdate.ProjectUsers is null)
     {
-        projectToUpdate.Users = new List<User>();
+        projectToUpdate.ProjectUsers = new List<ProjectUser>();
     }
 
-    if (!projectToUpdate.Users.Any(u => u.Id == userToAdd.Id))
+    if (!projectToUpdate.ProjectUsers.Any(u => u.UserId == userToAdd.Id))
     {
-        projectToUpdate.Users.Add(userToAdd);
+        var projectUser = new ProjectUser
+        {
+            User = userToAdd,
+            Project = projectToUpdate,
+            Role = role
+        };
+
+        projectToUpdate.ProjectUsers.Add(projectUser);
         _context.SaveChanges();
+
+        return projectUser;
     }
 
-    return userToAdd;
+    return null;
+    
 }
 
 
